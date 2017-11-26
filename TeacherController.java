@@ -1,5 +1,6 @@
 package com.mathpar.web.controller;
 
+import com.mathpar.web.db.dao.DbSubject;
 import com.mathpar.web.db.dao.DbUser;
 import com.mathpar.web.db.entity.Subject;
 import org.slf4j.Logger;
@@ -21,6 +22,7 @@ public class TeacherController {
     private static final Logger LOG = LoggerFactory.getLogger(TeacherController.class);
 
     private DbUser dbUser;
+    private DbSubject dbSubject;
 
     @Autowired
     public void setDbUser(DbUser dbUser) {
@@ -38,7 +40,7 @@ public class TeacherController {
 
     @RequestMapping(value = "/{teacherId}/subjects", method = RequestMethod.GET)
     public ModelAndView getTeacherSubject(@PathVariable("teacherId") long teacherId) {
-        List<Subject> subjectList = dbUser.getSubjectByTeacherId(teacherId);
+        List<Subject> subjectList = dbSubject.getSubjectByTeacherId(teacherId);
         HashMap<String, List<Subject>> model = new HashMap<>();
         model.put("subject_list", subjectList);
         return new ModelAndView("teacher_subject", model);
