@@ -7,17 +7,7 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="941d3ee4-9ed8-4f36-b93e-63f8d1567e1d" name="Default" comment="">
-      <change beforePath="" afterPath="$PROJECT_DIR$/src/main/java/com/mathpar/web/db/dao/DbGroups.java" />
-      <change beforePath="" afterPath="$PROJECT_DIR$/src/main/java/com/mathpar/web/db/entity/mappers/TaskMapper.java" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/mathpar/web/controller/Tasks.java" afterPath="$PROJECT_DIR$/src/main/java/com/mathpar/web/controller/Tasks.java" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/mathpar/web/controller/TeacherController.java" afterPath="$PROJECT_DIR$/src/main/java/com/mathpar/web/controller/TeacherController.java" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/mathpar/web/db/dao/DbSubject.java" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/mathpar/web/db/dao/DbTasks.java" afterPath="$PROJECT_DIR$/src/main/java/com/mathpar/web/db/dao/DbTasks.java" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/mathpar/web/db/dao/DbUser.java" afterPath="$PROJECT_DIR$/src/main/java/com/mathpar/web/db/dao/DbUser.java" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/mathpar/web/db/entity/Task.java" afterPath="$PROJECT_DIR$/src/main/java/com/mathpar/web/db/entity/Task.java" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/mathpar/web/db/entity/mappers/EduGroupMapper.java" afterPath="$PROJECT_DIR$/src/main/java/com/mathpar/web/db/entity/mappers/EduGroupMapper.java" />
-      <change beforePath="$PROJECT_DIR$/stemukr08.iml" afterPath="$PROJECT_DIR$/stemukr08.iml" />
     </list>
     <ignored path="$PROJECT_DIR$/target/" />
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
@@ -506,6 +496,10 @@
   </component>
   <component name="VcsContentAnnotationSettings">
     <option name="myLimit" value="2678400000" />
+  </component>
+  <component name="VcsManagerConfiguration">
+    <MESSAGE value="Teacher's function v2.0" />
+    <option name="LAST_COMMIT_MESSAGE" value="Teacher's function v2.0" />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager />
