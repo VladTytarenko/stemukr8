@@ -3,6 +3,7 @@ package com.mathpar.web.db.dao;
 import com.fasterxml.jackson.core.JsonProcessingException;
 import com.fasterxml.jackson.databind.ObjectMapper;
 import com.mathpar.web.db.entity.Task;
+import com.mathpar.web.db.entity.mappers.TaskMapper;
 import com.mathpar.web.entity.MathparNotebook;
 import com.mathpar.web.entity.MathparSection;
 import com.mathpar.web.entity.TaskInEduPlan;
@@ -10,7 +11,7 @@ import com.mathpar.web.exceptions.AuthException;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.jdbc.core.BeanPropertyRowMapper;
+import org.springframework.jdbc.core.JdbcTemplate;
 import org.springframework.jdbc.core.namedparam.MapSqlParameterSource;
 import org.springframework.jdbc.core.namedparam.NamedParameterJdbcTemplate;
 import org.springframework.jdbc.support.GeneratedKeyHolder;
@@ -20,9 +21,10 @@ import org.springframework.transaction.annotation.Transactional;
 
 import java.io.IOException;
 import java.util.ArrayList;
-import java.util.HashMap;
 import java.util.List;
+import java.util.HashMap;
 import java.util.Map;
+
 
 @Repository
 @Transactional(rollbackFor = Exception.class)
@@ -38,13 +40,17 @@ public class DbTasks {
             "ORDER BY task_title ";
     private static final String GET_BY_ID = "SELECT task FROM tasks WHERE id = :taskId ";
     private static final String INSERT = "" +
-            "MERGE INTO tasks (task, task_title) KEY(task_title) VALUES (:task, :taskName) ";
+            "INSERT INTO tasks (task, task_title) KEY(task_title) VALUES (:task, :taskName) ";
+            //"MERGE INTO tasks (task, task_title) KEY(task_title) VALUES (:task, :taskName) ";
     private static final String INSERT_TO_EDUPLAN = "" +
             "INSERT INTO edu_plans (id_group, id_task) " +
             "VALUES (:idGroup, :idTask) ";
 
     private NamedParameterJdbcTemplate jdbcTpl;
     private ObjectMapper jacksonMapper = new ObjectMapper();
+
+    @Autowired
+    private JdbcTemplate jdbcTemplate;
 
     @Autowired
     public void setJdbcTpl(NamedParameterJdbcTemplate jdbcTpl) {
@@ -154,15 +160,16 @@ public class DbTasks {
                 .addValue("taskId", taskId));
     }
 
+    public List<Task> getAllTasks() {
+        String sql = "SELECT * FROM tasks"; //// !!!!!!!!!!!!!!1
+        return jdbcTemplate.query(sql, new TaskMapper());
+    }
 
-    public List<Task> getTasksOfSubjectById(long subjectId) {
-        Map<String, Object> parameters = new HashMap<>();
-        parameters.put("subject_id", subjectId);
-
-        String sql = "SELECT tasks.id as id, tasks.task_title as name, tasks.task edu_plans.date as date " +
-                "FROM tasks LEFT JOIN edu_plans ON tasks.id=edu_plans.id_task WHERE id_group IN(" +
-                "SELECT id FROM edu_groups WHERE subject_id=:subject_id)";
-
-        return jdbcTpl.query(sql, parameters, new BeanPropertyRowMapper(Task.class));
+    public void saveTask(Task task) {
+        String sql = "INSERT INTO tasks(task, task_title) VALUES(:task, :taskTitle)";
+        MapSqlParameterSource mapSqlParameterSource = new MapSqlParameterSource();
+        mapSqlParameterSource.addValue("task", task.getTask());
+        mapSqlParameterSource.addValue("taskTitle", task.getTaskTitle());
+        jdbcTpl.update(sql, mapSqlParameterSource);
     }
 }
