@@ -3,6 +3,7 @@ package com.mathpar.web.controller;
 import com.mathpar.web.db.dao.DbGroups;
 import com.mathpar.web.db.dao.DbUser;
 import com.mathpar.web.db.dao.DbTasks;
+import com.mathpar.web.db.entity.EduGroup;
 import com.mathpar.web.db.entity.Task;
 import com.mathpar.web.db.entity.User;
 import org.slf4j.Logger;
@@ -19,17 +20,17 @@ import java.util.Map;
 @Controller
 @RequestMapping(value = "/view/teacher")
 public class TeacherController {
+
     private static final Logger LOG = LoggerFactory.getLogger(TeacherController.class);
 
+    @Autowired
     private DbUser dbUser;
 
+    @Autowired
     private DbGroups dbGroups;
-    private DbTasks dbTask;
 
     @Autowired
-    public void setDbUser(DbUser dbUser) {
-        this.dbUser = dbUser;
-    }
+    private DbTasks dbTask;
 
     @RequestMapping(value = "/{teacherId}", method = RequestMethod.GET)
     public ModelAndView getTeacherCabineet(@PathVariable("teacherId") long teacherId) {
@@ -42,21 +43,19 @@ public class TeacherController {
     }
 
     @RequestMapping(value = "/{teacherId}/groups", method = RequestMethod.GET)
-    public ModelAndView getTeacherGroups() {
-        //List<EduGroup> listGroups = dbGroups.getGroups();
-        /*HashMap<String, List<EduGroup>> model = new HashMap<>();
-        model.put("group_list", listGroups);*/
-        return new ModelAndView("groups");//, model);
+    public ModelAndView getTeacherGroups(@PathVariable("teacherId") long teacherId) {
+        List<EduGroup> listGroups = dbGroups.getGroups();
+        HashMap<String, List<EduGroup>> model = new HashMap<>();
+        model.put("group_list", listGroups);
+        return new ModelAndView("groups", model);
     }
 
     @RequestMapping(value = "/{teacherId}/groups/{groupId}", method = RequestMethod.GET)
     public ModelAndView getStudentsOfGroup(@PathVariable("groupId") long groupId) {
-        //List<User> listOfStudents = dbUser.getStudentsByGroup(groupId);
         List<User> listOfStudents = dbUser.getStudentsByGroup(groupId);
         HashMap<String, List<User>> model = new HashMap<>();
         model.put("student_list", listOfStudents);
         return new ModelAndView("studentOfGroups", model);
-
     }
 
     @RequestMapping(value = "/{teacherId}/tasks", method = RequestMethod.GET)

@@ -21,11 +21,11 @@ public class Tasks {
         this.dbTasks = dbTasks;
     }
 
-    @ResponseBody
+    /*@ResponseBody
     @RequestMapping(value = "/plan", method = RequestMethod.GET)
     public List<TaskInEduPlan> getPlanForCurrentUser(@PageParam Page page) {
         return dbTasks.getPlanForUser(page.getUserId());
-    }
+    }*/
 
     @ResponseBody
     @RequestMapping(value = "/{taskId}", method = RequestMethod.GET)

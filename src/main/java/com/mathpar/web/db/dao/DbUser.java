@@ -116,14 +116,4 @@ public class DbUser {
         return jdbcTpl.query(sql, new MapSqlParameterSource("groupId", groupId), userMapper);
     }
 
-    /*public static void main(String[] args) {
-        long groupId = 1;
-        String sql = "SELECT * FROM mathpar_users u JOIN (SELECT id_user FROM students WHERE ID_GROUP = :groupId) s ON (s.id_user = u.id)";
-        MapSqlParameterSource parameters = new MapSqlParameterSource("groudId", groupId);
-        List<User> lu = jdbcTpl.query(sql, parameters, userMapper);
-        if (lu.isEmpty())
-            System.out.println("Empty");
-        else
-            System.out.println("Not Empty");
-    }*/
 }
