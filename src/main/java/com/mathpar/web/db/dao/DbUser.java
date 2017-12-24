@@ -1,6 +1,5 @@
 package com.mathpar.web.db.dao;
 
-import com.mathpar.web.db.entity.Student;
 import com.mathpar.web.db.entity.User;
 import com.mathpar.web.db.entity.mappers.UserMapper;
 import com.mathpar.web.db.util.SecurityUtil;
@@ -95,6 +94,10 @@ public class DbUser {
 
     @Transactional(rollbackFor = Exception.class, readOnly = true)
     public String getUsernameByUserId(long userId) {
+        //System.out.println("User " + jdbcTpl.queryForObject(
+        //        "SELECT username FROM mathpar_users WHERE id = :userId",
+        //        new MapSqlParameterSource("userId", userId), String.class));
+
         return jdbcTpl.queryForObject(
                 "SELECT username FROM mathpar_users WHERE id = :userId",
                 new MapSqlParameterSource("userId", userId), String.class);
@@ -108,4 +111,20 @@ public class DbUser {
                 new MapSqlParameterSource("studentId", studentId), String.class);
     }
 
+    @Transactional(rollbackFor = Exception.class, readOnly = true)
+    public List<User> getStudentsByGroup(long groupId) {
+        String sql = "SELECT * FROM mathpar_users u JOIN (SELECT id_user FROM students WHERE ID_GROUP = :groupId) s ON (s.id_user = u.id)";
+        return jdbcTpl.query(sql, new MapSqlParameterSource("groupId", groupId), userMapper);
+    }
+
+    /*public static void main(String[] args) {
+        long groupId = 1;
+        String sql = "SELECT * FROM mathpar_users u JOIN (SELECT id_user FROM students WHERE ID_GROUP = :groupId) s ON (s.id_user = u.id)";
+        MapSqlParameterSource parameters = new MapSqlParameterSource("groudId", groupId);
+        List<User> lu = jdbcTpl.query(sql, parameters, userMapper);
+        if (lu.isEmpty())
+            System.out.println("Empty");
+        else
+            System.out.println("Not Empty");
+    }*/
 }

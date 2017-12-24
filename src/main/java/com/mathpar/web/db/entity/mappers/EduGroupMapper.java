@@ -12,6 +12,6 @@ public class EduGroupMapper implements RowMapper<EduGroup> {
         EduGroup g = new EduGroup();
         g.id = rs.getLong("id");
         g.groupName = rs.getString("group_name");
-        return null;
+        return g;
     }
 }
