@@ -10,6 +10,7 @@ import org.slf4j.LoggerFactory;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.*;
+
 import org.springframework.web.servlet.ModelAndView;
 
 import java.util.HashMap;
@@ -22,9 +23,9 @@ public class TeacherController {
     private static final Logger LOG = LoggerFactory.getLogger(TeacherController.class);
 
     private DbUser dbUser;
-
     private DbGroups dbGroups;
     private DbTasks dbTask;
+
 
     @Autowired
     public void setDbUser(DbUser dbUser) {
@@ -77,5 +78,4 @@ public class TeacherController {
         dbTask.saveTask(task);
         return new ModelAndView("redirect:/view/teacher/{teacherId}/tasks");
     }
-
 }

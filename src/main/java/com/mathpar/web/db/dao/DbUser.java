@@ -97,6 +97,7 @@ public class DbUser {
         //System.out.println("User " + jdbcTpl.queryForObject(
         //        "SELECT username FROM mathpar_users WHERE id = :userId",
         //        new MapSqlParameterSource("userId", userId), String.class));
+
         return jdbcTpl.queryForObject(
                 "SELECT username FROM mathpar_users WHERE id = :userId",
                 new MapSqlParameterSource("userId", userId), String.class);
