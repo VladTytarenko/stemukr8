@@ -38,6 +38,7 @@ public class TeacherController {
 
         Map<String, Object> model = new HashMap<>();
         model.put("teacher_name", teacherName);
+        model.put("teacher_id", teacherId);
         System.out.println(teacherId + " " + teacherName);
         return new ModelAndView("teacher-cabinet", model);
     }
@@ -45,8 +46,10 @@ public class TeacherController {
     @RequestMapping(value = "/{teacherId}/groups", method = RequestMethod.GET)
     public ModelAndView getTeacherGroups(@PathVariable("teacherId") long teacherId) {
         List<EduGroup> listGroups = dbGroups.getGroups();
-        HashMap<String, List<EduGroup>> model = new HashMap<>();
+        //HashMap<String, List<EduGroup>> model = new HashMap<>();
+        HashMap<String, Object> model = new HashMap<>();
         model.put("group_list", listGroups);
+        model.put("teacher_id", teacherId);
         return new ModelAndView("groups", model);
     }
 
@@ -58,7 +61,7 @@ public class TeacherController {
         return new ModelAndView("studentOfGroups", model);
     }
 
-    @RequestMapping(value = "/{teacherId}/tasks", method = RequestMethod.GET)
+    /*@RequestMapping(value = "/{teacherId}/tasks", method = RequestMethod.GET)
     public ModelAndView getAllTasks() {
         List<Task> listTask = dbTask.getAllTasks();
         HashMap<String, List<Task>> model = new HashMap<>();
@@ -75,6 +78,6 @@ public class TeacherController {
     public ModelAndView setNewTask(@ModelAttribute("task") Task task) {
         dbTask.saveTask(task);
         return new ModelAndView("redirect:/view/teacher/{teacherId}/tasks");
-    }
+    }*/
 
 }

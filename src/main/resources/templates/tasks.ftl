@@ -6,8 +6,8 @@
         <#list listTasks as task>
             <tr>
                 <td>${task.id}</td>
-                <td>${row.taskTitle}</td>
-                <td>${row.task}</td>
+                <td>${task.taskTitle}</td>
+                <td>${task.task}</td>
             </tr>
         </#list>
 </div>
