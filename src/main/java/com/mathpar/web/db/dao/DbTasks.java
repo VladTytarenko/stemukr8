@@ -26,6 +26,7 @@ import java.util.HashMap;
 import java.util.Map;
 
 
+
 @Repository
 @Transactional(rollbackFor = Exception.class)
 public class DbTasks {
@@ -53,6 +54,7 @@ public class DbTasks {
     private JdbcTemplate jdbcTemplate;
 
     @Autowired
+
     public void setJdbcTpl(NamedParameterJdbcTemplate jdbcTpl) {
         this.jdbcTpl = jdbcTpl;
     }
@@ -171,5 +173,6 @@ public class DbTasks {
         mapSqlParameterSource.addValue("task", task.getTask());
         mapSqlParameterSource.addValue("taskTitle", task.getTaskTitle());
         jdbcTpl.update(sql, mapSqlParameterSource);
+
     }
 }
