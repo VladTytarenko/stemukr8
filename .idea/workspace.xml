@@ -8,6 +8,7 @@
   <component name="ChangeListManager">
     <list default="true" id="941d3ee4-9ed8-4f36-b93e-63f8d1567e1d" name="Default" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
+
       <change beforePath="$PROJECT_DIR$/src/main/java/com/mathpar/web/controller/TeacherController.java" afterPath="$PROJECT_DIR$/src/main/java/com/mathpar/web/controller/TeacherController.java" />
       <change beforePath="$PROJECT_DIR$/src/main/java/com/mathpar/web/db/dao/DbGroups.java" afterPath="$PROJECT_DIR$/src/main/java/com/mathpar/web/db/dao/DbGroups.java" />
       <change beforePath="$PROJECT_DIR$/src/main/java/com/mathpar/web/db/dao/DbSubject.java" afterPath="" />
@@ -18,6 +19,7 @@
       <change beforePath="$PROJECT_DIR$/src/main/resources/templates/tasks.ftl" afterPath="$PROJECT_DIR$/src/main/resources/templates/tasks.ftl" />
       <change beforePath="$PROJECT_DIR$/src/main/resources/templates/teacher-cabinet.ftl" afterPath="$PROJECT_DIR$/src/main/resources/templates/teacher-cabinet.ftl" />
     </list>
+
     <ignored path="$PROJECT_DIR$/target/" />
     <ignored path="$PROJECT_DIR$/.idea/httpRequests/" />
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
@@ -43,6 +45,7 @@
     <favorites_list name="stemukr08" />
   </component>
   <component name="FileEditorManager">
+
     <leaf SIDE_TABS_SIZE_LIMIT_KEY="300">
       <file leaf-file-name="Tasks.java" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/main/java/com/mathpar/web/controller/Tasks.java">
@@ -64,6 +67,7 @@
             <state relative-caret-position="36">
               <caret line="2" column="13" lean-forward="false" selection-start-line="2" selection-start-column="13" selection-end-line="2" selection-end-column="13" />
               <folding />
+
             </state>
           </provider>
         </entry>
@@ -81,6 +85,7 @@
       <file leaf-file-name="teacher-cabinet.ftl" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/main/resources/templates/teacher-cabinet.ftl">
           <provider selected="true" editor-type-id="text-editor">
+
             <state relative-caret-position="108">
               <caret line="6" column="13" lean-forward="false" selection-start-line="6" selection-start-column="13" selection-end-line="6" selection-end-column="13" />
               <folding />
@@ -114,6 +119,7 @@
             <state relative-caret-position="324">
               <caret line="18" column="19" lean-forward="false" selection-start-line="18" selection-start-column="19" selection-end-line="18" selection-end-column="19" />
               <folding />
+
             </state>
           </provider>
         </entry>
@@ -323,8 +329,10 @@
           <select />
         </subPane>
       </pane>
+
       <pane id="Scope" />
       <pane id="Scratches" />
+
     </panes>
   </component>
   <component name="PropertiesComponent">
@@ -630,6 +638,7 @@
       <window_info id="Event Log" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32882884" sideWeight="0.5042275" order="10" side_tool="true" content_ui="tabs" />
       <window_info id="Maven Projects" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32828686" sideWeight="0.5" order="4" side_tool="false" content_ui="tabs" />
       <window_info id="Run" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.07931571" sideWeight="0.49720672" order="7" side_tool="false" content_ui="tabs" />
+
       <window_info id="Version Control" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="11" side_tool="false" content_ui="tabs" />
       <window_info id="Spring" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.3281493" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
       <window_info id="Terminal" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32917318" sideWeight="0.5" order="12" side_tool="false" content_ui="tabs" />
@@ -711,6 +720,7 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="72">
           <caret line="9" column="13" lean-forward="false" selection-start-line="9" selection-start-column="13" selection-end-line="9" selection-end-column="13" />
+
         </state>
       </provider>
     </entry>
@@ -802,6 +812,7 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="0">
           <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+
         </state>
       </provider>
     </entry>
