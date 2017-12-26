@@ -6,25 +6,10 @@
     </artifacts-to-build>
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="941d3ee4-9ed8-4f36-b93e-63f8d1567e1d" name="Default" comment="Add login with templates and front-end">
-      <change beforePath="" afterPath="$PROJECT_DIR$/src/main/webapp/css/ie10-viewport-bug-workaround.css" />
-      <change beforePath="" afterPath="$PROJECT_DIR$/src/main/webapp/css/main.css" />
-      <change beforePath="" afterPath="$PROJECT_DIR$/src/main/webapp/js/bootstrap.min.js" />
-      <change beforePath="" afterPath="$PROJECT_DIR$/src/main/webapp/js/ie-emulation-modes-warning.js" />
-      <change beforePath="" afterPath="$PROJECT_DIR$/src/main/webapp/js/ie10-viewport-bug-workaround.js" />
-      <change beforePath="" afterPath="$PROJECT_DIR$/src/main/webapp/js/less.min.js" />
-      <change beforePath="" afterPath="$PROJECT_DIR$/src/main/webapp/task.html" />
+
+    <list default="true" id="941d3ee4-9ed8-4f36-b93e-63f8d1567e1d" name="Default" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/mathpar/web/controller/Tasks.java" afterPath="$PROJECT_DIR$/src/main/java/com/mathpar/web/controller/Tasks.java" />
-      <change beforePath="$PROJECT_DIR$/src/main/resources/templates/common/header.ftl" afterPath="$PROJECT_DIR$/src/main/resources/templates/common/header.ftl" />
-      <change beforePath="$PROJECT_DIR$/src/main/resources/templates/common/top_navbar.ftl" afterPath="$PROJECT_DIR$/src/main/resources/templates/common/top_navbar.ftl" />
-      <change beforePath="$PROJECT_DIR$/src/main/resources/templates/groups.ftl" afterPath="$PROJECT_DIR$/src/main/resources/templates/groups.ftl" />
-      <change beforePath="$PROJECT_DIR$/src/main/resources/templates/login.ftl" afterPath="$PROJECT_DIR$/src/main/resources/templates/login.ftl" />
-      <change beforePath="$PROJECT_DIR$/src/main/resources/templates/studentOfGroups.ftl" afterPath="$PROJECT_DIR$/src/main/resources/templates/studentOfGroups.ftl" />
-      <change beforePath="$PROJECT_DIR$/src/main/resources/templates/teacher-cabinet.ftl" afterPath="$PROJECT_DIR$/src/main/resources/templates/teacher-cabinet.ftl" />
-      <change beforePath="$PROJECT_DIR$/src/main/webapp/baranov/login.html" afterPath="$PROJECT_DIR$/src/main/webapp/baranov/login.html" />
-      <change beforePath="$PROJECT_DIR$/src/main/webapp/en/welcome.html" afterPath="$PROJECT_DIR$/src/main/webapp/en/welcome.html" />
-      <change beforePath="$PROJECT_DIR$/src/main/webapp/ru/welcome.html" afterPath="$PROJECT_DIR$/src/main/webapp/ru/welcome.html" />
+
     </list>
     <ignored path="$PROJECT_DIR$/target/" />
     <ignored path="$PROJECT_DIR$/.idea/httpRequests/" />
@@ -65,8 +50,10 @@
       <file leaf-file-name="task.html" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/src/main/webapp/task.html">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="154">
-              <caret line="18" column="0" lean-forward="true" selection-start-line="18" selection-start-column="0" selection-end-line="18" selection-end-column="0" />
+
+            <state relative-caret-position="172">
+              <caret line="19" column="8" lean-forward="true" selection-start-line="19" selection-start-column="8" selection-end-line="19" selection-end-column="8" />
+
               <folding />
             </state>
           </provider>
@@ -882,7 +869,8 @@
     <MESSAGE value="Teacher's function v2.0" />
     <MESSAGE value="Teacher's function v2.0 + freemarker templates" />
     <MESSAGE value="Add login with templates and front-end" />
-    <option name="LAST_COMMIT_MESSAGE" value="Add login with templates and front-end" />
+    <MESSAGE value="Add front-end for teacher's pages and add scpipts for Task API." />
+    <option name="LAST_COMMIT_MESSAGE" value="Add front-end for teacher's pages and add scpipts for Task API." />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager />
@@ -1285,8 +1273,10 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/src/main/webapp/task.html">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="154">
-          <caret line="18" column="0" lean-forward="true" selection-start-line="18" selection-start-column="0" selection-end-line="18" selection-end-column="0" />
+
+        <state relative-caret-position="172">
+          <caret line="19" column="8" lean-forward="true" selection-start-line="19" selection-start-column="8" selection-end-line="19" selection-end-column="8" />
+
           <folding />
         </state>
       </provider>
