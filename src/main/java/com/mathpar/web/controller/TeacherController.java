@@ -29,9 +29,6 @@ public class TeacherController {
     @Autowired
     private DbGroups dbGroups;
 
-    @Autowired
-    private DbTasks dbTask;
-
     @RequestMapping(value = "/{teacherId}", method = RequestMethod.GET)
     public ModelAndView getTeacherCabineet(@PathVariable("teacherId") long teacherId) {
         String teacherName = dbUser.getUsernameByUserId(teacherId);

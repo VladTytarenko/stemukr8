@@ -13,6 +13,7 @@ import org.springframework.jdbc.support.GeneratedKeyHolder;
 import org.springframework.jdbc.support.KeyHolder;
 import org.springframework.stereotype.Repository;
 import org.springframework.transaction.annotation.Transactional;
+import org.springframework.security.crypto.bcrypt.BCryptPasswordEncoder;
 
 import java.io.IOException;
 import java.security.NoSuchAlgorithmException;
@@ -23,6 +24,8 @@ import java.util.List;
 @Transactional(rollbackFor = Exception.class)
 public class DbUser {
     private static final Logger LOG = LoggerFactory.getLogger(DbUser.class);
+
+    private BCryptPasswordEncoder bCryptPasswordEncoder;
 
     private NamedParameterJdbcTemplate jdbcTpl;
     private UserMapper userMapper = new UserMapper();
@@ -57,21 +60,13 @@ public class DbUser {
 
     @Transactional(rollbackFor = Exception.class, readOnly = true)
     public User getUser(String email, String password) throws IOException,
-            NoSuchAlgorithmException {
-        User user;
-        try {
-            user = jdbcTpl.queryForObject(GET_USER_BY_EMAIL,
+            NoSuchAlgorithmException, AuthException {
+        User user = jdbcTpl.queryForObject(GET_USER_BY_EMAIL,
                     new MapSqlParameterSource().addValue("email", email), userMapper);
-        } catch (Exception e) {
-            throw new AuthException("Invalid email or password.", e);
-        }
-        byte[] salt = SecurityUtil.base64ToByte(user.getSalt());
-        if (!Arrays.equals(SecurityUtil.getHash(password, salt),
-                SecurityUtil.base64ToByte(user.getPassword()))) {
-            throw new AuthException("Invalid email or password.");
-        } else {
-            return user;
-        }
+        bCryptPasswordEncoder = new BCryptPasswordEncoder();
+        if (!bCryptPasswordEncoder.matches(password, user.getPassword()))
+            throw new AuthException();
+        return user;
     }
 
     public void insertIntoStudents(long userId, long idGroup) {
