@@ -49,8 +49,7 @@
                     <h3 class="masthead-brand">STEM</h3>
                     <nav>
                         <ul class="nav masthead-nav">
-                            <li class="active"><a href="./login.html">Log in</a></li>
-                            <li><a href="./signup.html">Sign up</a></li>
+                            <li class="active"><a href="./login">Log in</a></li>
                         </ul>
                     </nav>
                 </div>
