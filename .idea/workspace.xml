@@ -6,6 +6,7 @@
     </artifacts-to-build>
   </component>
   <component name="ChangeListManager">
+
     <list default="true" id="941d3ee4-9ed8-4f36-b93e-63f8d1567e1d" name="Default" comment="API and templates for admin.">
       <change beforePath="" afterPath="$PROJECT_DIR$/src/main/java/com/mathpar/web/controller/AdminController.java" />
       <change beforePath="" afterPath="$PROJECT_DIR$/src/main/resources/templates/admin-cabinet.ftl" />
@@ -17,6 +18,7 @@
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
       <change beforePath="$PROJECT_DIR$/src/main/java/com/mathpar/web/controller/Login.java" afterPath="$PROJECT_DIR$/src/main/java/com/mathpar/web/controller/Login.java" />
       <change beforePath="$PROJECT_DIR$/src/main/java/com/mathpar/web/db/dao/DbUser.java" afterPath="$PROJECT_DIR$/src/main/java/com/mathpar/web/db/dao/DbUser.java" />
+
     </list>
     <ignored path="$PROJECT_DIR$/target/" />
     <ignored path="$PROJECT_DIR$/.idea/httpRequests/" />
@@ -47,6 +49,7 @@
       <file leaf-file-name="AdminController.java" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/src/main/java/com/mathpar/web/controller/AdminController.java">
           <provider selected="true" editor-type-id="text-editor">
+
             <state relative-caret-position="321">
               <caret line="67" column="30" lean-forward="false" selection-start-line="67" selection-start-column="30" selection-end-line="67" selection-end-column="30" />
               <folding>
@@ -54,6 +57,7 @@
                 <element signature="e#3207#3208#0" expanded="true" />
                 <element signature="e#3258#3259#0" expanded="true" />
               </folding>
+
             </state>
           </provider>
         </entry>
@@ -823,8 +827,10 @@
     <MESSAGE value="Teacher's function v2.0 + freemarker templates" />
     <MESSAGE value="Add login with templates and front-end" />
     <MESSAGE value="Add front-end for teacher's pages and add scpipts for Task API." />
+
     <MESSAGE value="API and templates for admin." />
     <option name="LAST_COMMIT_MESSAGE" value="API and templates for admin." />
+
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager />
@@ -1211,8 +1217,10 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/src/main/resources/templates/admins.ftl">
       <provider selected="true" editor-type-id="text-editor">
+
         <state relative-caret-position="321">
           <caret line="25" column="8" lean-forward="false" selection-start-line="25" selection-start-column="8" selection-end-line="25" selection-end-column="8" />
+
           <folding />
         </state>
       </provider>
