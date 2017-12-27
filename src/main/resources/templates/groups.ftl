@@ -11,7 +11,6 @@
                 <tr>
                     <th>ID</th>
                     <th>Name</th>
-                    <th>View</th>
                 </tr>
                 </thead>
                 <tbody>
@@ -19,6 +18,7 @@
             <tr>
                 <td>${group.id}</td>
                 <td>${group.groupName}</td>
+                <td><a href="/api/tasks/${group.id}/new_tasks">Tasks</a></td>
                 <td><a href="groups/${group.id}">View students</a></td>
             </tr>
             </#list>

@@ -31,7 +31,7 @@ public class AdminController {
     }
 
     @RequestMapping(value = "/edit-teachers", method = RequestMethod.GET)
-    public ModelAndView getEditTeachers() {//(@PathVariable("adminId") long adminId) {
+    public ModelAndView getEditTeachers() {
         Map<String,Object> model = new HashMap<>();
         List<User> teacherList = dbUser.getUserByType(UserRole.TEACHER);
         model.put("teachersList", teacherList);
@@ -40,9 +40,9 @@ public class AdminController {
 
     @RequestMapping(value = "/edit-teachers/{teacherId}", method = RequestMethod.GET)
     public ModelAndView getTeacherToEdit(@PathVariable("teacherId") long teacherId) {
-        Map<String,Object> model = new HashMap<>();
+        Map<String, Object> model = new HashMap<>();
         model.put("teacher", dbUser.getUserById(teacherId));
-        return new ModelAndView("teacherToEdit");
+        return new ModelAndView("teacherToEdit", model);
     }
 
     @RequestMapping(value = "/students", method = RequestMethod.GET)
@@ -53,7 +53,7 @@ public class AdminController {
         return new ModelAndView("students", model);
     }
 
-    @RequestMapping(value = "/admin", method = RequestMethod.GET)
+    @RequestMapping(value = "/admins", method = RequestMethod.GET)
     public ModelAndView getAllAdmins() {
         Map<String, Object> model = new HashMap<>();
         List<User> adminList = dbUser.getUserByType(UserRole.SUPERADMIN);
@@ -83,11 +83,11 @@ public class AdminController {
                                    @ModelAttribute("user_role") int userRole) {
         System.out.println("User role: " + userRole);
         dbUser.save(email, username, password, userRole);
-        if (userRole == 3)
+        if (userRole == UserRole.TEACHER.ordinal())
             return new ModelAndView("redirect:/admin/edit-teachers");
-        else if (userRole == 2)
+        else if (userRole == UserRole.STUDENT.ordinal())
             return new ModelAndView("redirect:/admin/students");
-        else if (userRole == 6)
+        else if (userRole == UserRole.SUPERADMIN.ordinal())
             return new ModelAndView("redirect:/admin/admins");
         else
             return new ModelAndView("redirect:/new_user");

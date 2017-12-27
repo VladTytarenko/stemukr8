@@ -131,17 +131,8 @@ public class DbTasks {
         return res;
     }
 
-    public Long saveAsNewTask(MathparNotebook mathparNotebook, String taskName)
-            throws JsonProcessingException {
-        if (taskName == null || taskName.isEmpty()) {
-            return null;
-        }
+    public Long saveAsNewTask(String task, String taskName) {
         KeyHolder keyHolder = new GeneratedKeyHolder();
-
-        String task = jacksonMapper.writeValueAsString(mathparNotebook);
-        // Remove soft hyphens.
-        task = task.replaceAll("\\u00AD", "");
-        taskName = taskName.replaceAll("\\u00AD", "");
         jdbcTpl.update(INSERT, new MapSqlParameterSource("task", task)
                 .addValue("taskName", taskName), keyHolder);
         LOG.debug("Keys: " + keyHolder.getKeys());

@@ -8,12 +8,12 @@
     <h1>Edit User</h1>
     <form name="teacher" action="/admin/edit-teachers/${teacherId}" method="post">
         <p>Id: ${teacherId} </p>
-        <p>Name:</p>
-        <input title="Name" type="text" name="username" value="teacher2"/><!--teacher.username}"/>-->
+        <p>Name: </p>
+        <input title="Name" type="text" name="username" value="${teacher.username}"/>
         <p>Email:</p>
-        <input title="Email" type="email" name="email" value="email"/><!--{teacher.email}"/> -->
+        <input title="Email" type="email" name="email" value="${teacher.email}"/>
         <p>Password:</p>
-        <input title="Password" type="password" name="password" value="asasa"/><!--{teacher.password}"/> -->
+        <input title="Password" type="password" name="password"/>
         <input type="submit" value="OK">
     </form>
 </body>

@@ -42,6 +42,8 @@ public class Login {
                 return new ModelAndView("redirect:/view/teacher/" + userId);
             else if (userRole.equals(UserRole.SUPERADMIN))
                 return new ModelAndView("redirect:/admin/" + userId);
+            else if (userRole.equals(UserRole.STUDENT))
+                return new ModelAndView("redirect/student/" + userId);
             else
                 return new ModelAndView("redirect:login");
 

@@ -7,6 +7,7 @@ import com.mathpar.web.entity.MathparNotebook;
 import com.mathpar.web.entity.TaskInEduPlan;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.*;
+import org.springframework.web.servlet.ModelAndView;
 
 import java.io.IOException;
 import java.util.List;
@@ -34,16 +35,22 @@ public class Tasks {
         return dbTasks.getTasks(taskId);
     }
 
+    @RequestMapping(value = "/{groupId}/new_task", method = RequestMethod.GET)
+    public ModelAndView newTask() {
+        return new ModelAndView("tasks");
+    }
+
     @RequestMapping(value = "/{groupId}/new_task", method = RequestMethod.POST)
-    public void newTask(@RequestBody MathparNotebook mathparNotebook,
-                        //@RequestParam("task_title") String taskName,
-                        @PathVariable("groupId") long groupId)
-            throws JsonProcessingException {
-        Long taskId = dbTasks.saveAsNewTask(mathparNotebook, "testTitile");//, taskName);
+    public ModelAndView newTask(@ModelAttribute("content") String task,
+                                @RequestParam("title") String taskTitle,
+                                @PathVariable("groupId") long groupId) {
+        Long taskId = dbTasks.saveAsNewTask(task, taskTitle);
         // TODO: insert to proper group. DONE !!!
-        if (taskId != null) { // If this is a new task.
+        if (taskId != null) {
             dbTasks.insertTaskToEduPlan(groupId, taskId);
+            return new ModelAndView("redirect:/api/tasks/{groupId}/new_task");
         }
+        return new ModelAndView("redirect:/api/tasks/{groupId}/new_task");
     }
 
     @RequestMapping(value = "/{taskId}/delete", method = RequestMethod.POST)
